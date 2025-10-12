@@ -1,41 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ahmed Rashwan Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
+
 <body>
+
     <header>
-        <h2><a href="#" class="logo">Ahmed rashwan</a></h2>
-        <ul>
-            <li><a href="#" class="active">Home</a></li>
-            <li><a href="#">CV</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
+        <!-- icon photo to display my photo and name -->
+        <div class="profile">
+            <img src="photo/png.png" id="avatar" alt="Avatar">
+            <div class="info" id="info">
+                <span class="name">Ahmed Rashwan</span>
+                <span class="close" id="closeBtn">&times;</span>
+            </div>
+        </div>
+        <div class="nav-toggle" id="navToggle">&#9776;</div>
+        <nav id="nav">
+            <span class="close-nav" id="closeNav">&times;</span>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+            <!-- <a href="#footer">Footer</a> -->
+        </nav>
     </header>
-    <section class="main">
-        <img src="photo/stars1.png" id="stars">
-        <h2 class="Rashwan">Ahmed rashwan</h2>
-        <img src="photo/moon2.png" id="moon">
-        <img src="photo/mountains3.png" id="mountains3">
-        <img src="photo/mountains4.png" id="mountains4">
-        <img src="photo/river5.png" id="river">
-        <img src="photo/boat6.png" id="boat">
-        <img src="photo/mountains7.png" id="mountains7">
-    </section>
-    <section class="content">
-        <h2>Information About Ahmed</h2>
-        <p>I am a Full Stack Web Developer, graduated from ITI, with practical training and a solid foundation in modern web tech.
-            My technical background covers PHP (Core & Advanced) and Laravel, JavaScript, MySQL, HTML5, CSS3, Angular, and Node.js, in addition to working with frameworks like Bootstrap and CMS platforms such as WordPress.
-            I also gained experience in Linux administration (Red Hat), Docker, Apache Web Server, version control with Git, and fundamental knowledge of computer networks and cybersecurity.</p>
-        <p>Beyond technical skills, I focus on UI/UX design principles and database fundamentals, while continuously improving my soft skills such as communication, presentation, and problem-solving.</p>
-        <p>I am passionate about building scalable web applications, collaborating in team environments, and always open to new opportunities to grow and contribute.</p>
+
+    <section class="home" id="home">
+        <img src="photo/stars1.png" id="stars" alt="stars">
+        <img src="photo/moon2.png" id="moon" alt="moon">
+        <img src="photo/mountains3.png" id="mountains3" alt="mountains">
+        <img src="photo/mountains4.png" id="mountains4" alt="mountains">
+        <img src="photo/river5.png" id="river" alt="river">
+        <img src="photo/boat6.png" id="boat" alt="boat">
+        <img src="photo/mountains7.png" id="mountains7" alt="mountains">
+        <h2 class="Rashwan">
+            <span class="first">Ahmed</span>
+            <span class="last">Rashwan</span>
+        </h2>
     </section>
 
+
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="profile">
+                <img src="photo/myphoto.png" alt="Your Photo">
+            </div>
+    
+            <div class="about-content">
+                <h2>About Me</h2>
+            <p> Full Stack PHP Developer with experience in building scalable, efficient, and user-focused web applications.</p>
+            <p>Proficient in leveraging Laravel's features to deliver efficient , scalable , and maintainable solutions .</p>
+            <p>Skilled in database management, RESTful API development, frontend integration, testing , debugging , and performance
+                optimization .</p>
+            <p>Collaborative team player with a commitment to delivering high-quality results within project timelines .</p>
+        
+                <div class="skills">
+                    <span>PHP (Core & Advanced)</span>
+                    <span>Laravel</span>
+                    <span>Node.js</span>
+                    <span>WordPress (CMS)</span>
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>Responsive Design (Flexbox, Grid)</span>
+                    <span>Bootstrap</span>
+                    <span>JavaScript (ES6+)</span>
+                    <span>jQuery</span>
+                    <span>Angular (Components, Services, RxJS)</span>
+                    <span>MySQL</span>
+                    <span>Database Fundamentals</span>
+                    <span>Git</span>
+                    <span>Docker</span>
+                    <span>Apache Web Server</span>
+                    <span>Linux (Ubuntu)</span>
+                    <span>Red Hat SysAdmin I</span>
+                    <span>OS Fundamentals</span>
+                    <span>Networks & Cyber Security</span>
+                    <span>Unit Testing</span>
+                    <span>UX/UI</span>
+                </div>
+                <div class="download-btn">
+                    <a href="photo/Ahmed-rashwan software engineer.pdf" download>
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                </div>
+    
+                <!-- <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fas fa-map-marker-alt"></i></a>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- <section class="about" id="about">
+        <h2 class="section-title">About Me</h2>
+
+    </section> -->
+
+    <section class="services" id="services">
+        <h2 class="section-title">Services</h2>
+        <div class="content">
+            <div class="card">
+                <i class="fas fa-code"></i>
+                <h3>Web Development</h3>
+                <p>
+                    I design and build full-stack web applications using PHP, Laravel, and MySQL.
+                    My focus is on creating scalable, secure, and high-performance solutions
+                    with clean architecture and maintainable code.
+                </p>
+            </div>
+            <div class="card">
+                <i class="fas fa-paint-brush"></i>
+                <h3>UI/UX Design</h3>
+                <p>
+                    I create modern, responsive, and user-friendly interfaces using HTML5, CSS3,
+                    JavaScript, and Angular. I focus on delivering clean layouts and seamless
+                    user experiences that align with business goals.
+                </p>
+            </div>
+            <div class="card">
+                <i class="fas fa-server"></i>
+                <h3>API Development</h3>
+                <p>
+                    I build and integrate RESTful APIs that connect front-end applications with
+                    backend services. I ensure efficiency, security, and smooth data flow across systems.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects" id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="content">
+            <div class="project-card">
+                <img src="photo/10.png" alt="Project">
+                <div class="project-info">
+                    <p>Category Placeholder</p>
+                    <a href="#">Project Title</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="photo/10.png" alt="Project">
+                <div class="project-info">
+                    <p>Category Placeholder</p>
+                    <a href="#">Project Title</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="photo/10.png" alt="Project">
+                <div class="project-info">
+                    <p>Category Placeholder</p>
+                    <a href="#">Project Title</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 class="section-title">Contact</h2>
+        <div class="footer">
+            <a href="https://www.facebook.com/ahmed.rashwan.968886/" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="https://www.instagram.com/ahmed__rashwan/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+            <a href="https://www.linkedin.com/in/ahmed-rashwan-55a473209/" target="_blank"><i
+                    class="fab fa-linkedin fa-2x"></i></a>
+            <a href="https://github.com/ahmedrashwandev-hub" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+            <a href="https://web.whatsapp.com/send/?phone=201091845823&text&type=phone_number&app_absent=0" target="_blank"
+                rel="noopener noreferrer"><i class="fab fa-whatsapp fa-2x"></i></a>
+            <a href="https://www.google.com/maps/place/29%C2%B059'41.4%22N+31%C2%B010'35.8%22E/@29.994823,31.176623,695m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d29.994823!4d31.176623?entry=ttu&g_ep=EgoyMDI1MTAwOC4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank" rel="noopener noreferrer"><i class="fas fa-map-marker-alt fa-2x"></i></a>
+        </div>
+        <div class="content">
+            <div class="card">
+                <i class="fas fa-envelope"></i>
+                <h3>Email</h3>
+                <p>ahmed.rashwan.dev@gmail.com</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-phone"></i>
+                <h3>Phone</h3>
+                <p><span style="color: rgb(37, 211, 102);">( WhatsApp )</span> +20 1091845823</p>
+                <p>+20 1113688748</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Location</h3>
+                <p>Giza (Cairo), Egypt</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <p>Designed by Ahmed Rashwan © 2025 </p>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="main.js"></script>
+
 </body>
+
 </html>
