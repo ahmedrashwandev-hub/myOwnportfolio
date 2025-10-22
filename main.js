@@ -21,6 +21,16 @@ let Rashwan = document.querySelector('.Rashwan');
 
 window.onscroll = function () {
     let value = scrollY;
+    let maxFontSize;
+    // التحكم في الحجم حسب عرض الشاشة
+    if (window.innerWidth <= 480) {
+        maxFontSize = 40; // للموبايلات الصغيرة
+    } else if (window.innerWidth <= 768) {
+        maxFontSize = 60; // للتابلت أو الموبايلات الكبيرة
+    } else {
+        maxFontSize = 84; // للشاشات الكبيرة
+    }
+
     stars.style.left = value + 'px';
     moon.style.top = value * 4 + 'px';
     mountains3.style.top = value * 2 + 'px';
@@ -29,11 +39,13 @@ window.onscroll = function () {
     river.style.top = value + 'px';
     boat.style.top = value + 'px';
     boat.style.left = value * 3 + 'px';
+
     Rashwan.style.fontSize = value + 'px';
-    if (scrollY >= 84) {
-        Rashwan.style.fontSize = 84 + 'px';
+
+    if (scrollY >= maxFontSize) {
+        Rashwan.style.fontSize = maxFontSize + 'px';
         Rashwan.style.position = 'fixed';
-        if (scrollY >= 260) Rashwan.style.display = 'none';
+        if (scrollY >= 300) Rashwan.style.display = 'none';
         else Rashwan.style.display = 'block';
     }
     if (scrollY >= 97) document.querySelector('.home').style.background = 'linear-gradient(#376281,#10001f)';
@@ -75,6 +87,3 @@ window.addEventListener('scroll', () => {
         }
     });
 });
-
-
-

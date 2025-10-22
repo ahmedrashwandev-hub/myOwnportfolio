@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
+
 * {
     margin: 0;
     padding: 0;
@@ -13,6 +14,15 @@ body {
     color: #fff;
     overflow-x: hidden;
     padding-top: 70px;
+    font-size: var(--font-base);
+}
+
+:root {
+    /* Fluid typography and spacing */
+    --font-base: clamp(14px, 1.6vw, 18px);
+    --font-h2: clamp(24px, 4.5vw, 40px);
+    --space-section: clamp(60px, 7vw, 140px);
+    --space-inline: clamp(16px, 4vw, 64px);
 }
 
 /* Header */
@@ -21,7 +31,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
+    padding: 15px var(--space-inline);
     position: fixed;
     top: 0;
     left: 0;
@@ -29,6 +39,7 @@ header {
     background: rgba(0, 0, 0, 0.5);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 /* icon photo to display my photo and name */
 
 .profile {
@@ -128,6 +139,7 @@ header {
     transform: scale(1.05);
     color: #f72585;
 }
+
 /* ******************************************************** */
 
 
@@ -148,12 +160,13 @@ header {
 }
 
 .profile img {
-    width: 280px;
-    height: 360px;
+    width: min(100%, 280px);
+    height: auto;
     object-fit: cover;
     border-radius: 20px;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-    
+    display: block;
+    margin: 0 auto;
 }
 
 .about-content {
@@ -162,7 +175,7 @@ header {
 }
 
 .about-content h2 {
-    font-size: 2rem;
+    font-size: var(--font-h2);
     margin-bottom: 15px;
     color: #f72585;
 }
@@ -217,7 +230,7 @@ nav a.active {
 
 nav {
     display: flex;
-    gap: 25px;
+    gap: clamp(12px, 3vw, 30px);
 }
 
 nav a {
@@ -239,6 +252,7 @@ nav a:hover {
     cursor: pointer;
     font-size: 1.8em;
     color: #fff;
+    z-index: 1001;
 }
 
 /* Home Section */
@@ -277,18 +291,18 @@ nav a:hover {
 .Rashwan {
     position: absolute;
     color: #fff;
-    font-size: 1px;
+    font-size: clamp(1px, 1vw, 1px);
     transform: translateY(-80px);
 }
 
 /* Sections common */
 section {
-    padding: 100px 50px;
+    padding: var(--space-section) var(--space-inline);
 }
 
 h2.section-title {
     text-align: center;
-    font-size: 2.2em;
+    font-size: var(--font-h2);
     margin-bottom: 50px;
     color: #4e9eff;
 }
@@ -328,11 +342,11 @@ h2.section-title {
 }
 
 .services .card,
-.contact .card{
+.contact .card {
     background-color: rgba(255, 255, 255, 0.05);
     padding: 25px;
     border-radius: 15px;
-    width: 500px;
+    width: min(100%, 500px);
     text-align: center;
     transition: 0.5s;
 }
@@ -376,9 +390,10 @@ h2.section-title {
     text-align: center;
     transition: 0.5s;
 }
+
 .projects .project-card img {
     width: 100%;
-    height: 200px;
+    height: clamp(160px, 25vw, 220px);
     object-fit: cover;
     border-radius: 10px;
 }
@@ -427,11 +442,13 @@ h2.section-title {
     color: #4e9eff;
     margin-bottom: 10px;
 }
+
 .footer {
     background-color: #10001f;
-    padding: 30px 50px;
+    padding: 30px var(--space-inline);
     text-align: center;
 }
+
 .footer a {
     margin: 0 10px;
     color: #4e9eff;
@@ -441,13 +458,14 @@ h2.section-title {
 /* Footer */
 #footer {
     background-color: #10001f;
-    padding: 30px 50px;
+    padding: 30px var(--space-inline);
     text-align: center;
 }
 
 #footer p {
     margin-bottom: 15px;
 }
+
 .close-nav {
     display: none;
     position: absolute;
@@ -481,34 +499,61 @@ h2.section-title {
 /* Responsive */
 @media(max-width:1024px) {
     header {
-        padding: 15px 20px;
+        padding: 12px var(--space-inline);
     }
 
     section {
-        padding: 80px 20px;
+        padding: calc(var(--space-section) * 0.8) var(--space-inline);
     }
 }
 
-@media(max-width:768px) {
+/* Mobile and tablet navigation - hamburger menu only */
+@media(max-width: 768px) {
+
+    /* Hide desktop navigation */
     nav {
         position: absolute;
         top: 70px;
         left: 0;
         width: 100%;
         flex-direction: column;
-        background: rgba(0, 0, 0, 0.85);
+        background: rgba(0, 0, 0, 0.95);
         display: none;
         text-align: center;
         gap: 15px;
-        padding: 15px 0;
+        padding: 20px 0;
+        z-index: 1000;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     nav.show {
         display: flex;
     }
 
+    /* Show hamburger menu icon only on mobile/tablet */
     .nav-toggle {
         display: block;
+    }
+}
+
+/* Ensure desktop navigation is always visible on larger screens */
+@media(min-width: 769px) {
+    nav {
+        display: flex !important;
+        position: static !important;
+        background: transparent !important;
+        flex-direction: row !important;
+        width: auto !important;
+        padding: 0 !important;
+        gap: clamp(12px, 3vw, 30px);
+    }
+
+    .nav-toggle {
+        display: none !important;
+    }
+
+    .close-nav {
+        display: none !important;
     }
 }
 
@@ -522,12 +567,13 @@ h2.section-title {
     }
 
     .Rashwan {
-        font-size: 40px;
+        font-size: clamp(1px, 1vw, 1px);
     }
 }
+
 @media (max-width: 768px) {
     .Rashwan {
-        font-size: 1px;
+        font-size: clamp(1px, 1vw, 1px);
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -544,8 +590,8 @@ h2.section-title {
     }
 
     .profile img {
-        width: 200px;
-        height: 200px;
+        width: min(80%, 240px);
+        height: auto;
     }
 }
 
@@ -553,14 +599,27 @@ h2.section-title {
 
 @media (max-width: 768px) {
     .about-section .profile img {
-        width: 240px;
-        height: 320px;
+        width: min(90%, 240px);
+        height: auto;
         object-fit: cover;
         border-radius: 20px;
         margin: 0 auto 20px;
         display: block;
         box-shadow: 0 0 15px rgba(78, 158, 255, 0.4);
     }
+}
+
+/* Ensure profile photo is centered on all screen sizes */
+.about-section .profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.about-section .profile img {
+    display: block;
+    margin: 0 auto;
 }
 
 @media (max-width: 768px) {
@@ -577,4 +636,72 @@ h2.section-title {
         height: auto;
         /* يسمح للصورة بالارتفاع الطبيعي */
     }
+}
+
+/* Ultra-mobile tweaks */
+@media (max-width: 360px) {
+    nav a {
+        padding: 8px 10px;
+    }
+}
+
+/* Tablet and up */
+@media (min-width: 576px) {
+    :root {
+        --font-base: clamp(14px, 1.4vw, 17px);
+    }
+}
+
+@media (min-width: 768px) {
+    :root {
+        --font-base: clamp(15px, 1.2vw, 17px);
+    }
+}
+
+@media (min-width: 992px) {
+    :root {
+        --font-base: 16px;
+    }
+}
+
+@media (min-width: 1200px) {
+    :root {
+        --font-h2: clamp(28px, 3.6vw, 44px);
+    }
+}
+
+@media (min-width: 1440px) {
+    :root {
+        --font-base: 17px;
+        --font-h2: clamp(32px, 3.2vw, 48px);
+    }
+}
+
+@media (min-width: 1920px) {
+    :root {
+        --font-base: 18px;
+        --space-section: clamp(90px, 7vw, 180px);
+        --font-h2: clamp(36px, 2.8vw, 56px);
+    }
+}
+
+@media (min-width: 2560px) {
+    :root {
+        --font-base: 20px;
+        --space-section: clamp(120px, 8vw, 220px);
+    }
+
+    .container {
+        max-width: 1400px;
+    }
+
+    .projects .content {
+        max-width: 1600px;
+    }
+}
+
+/* Make generic images fluid without affecting parallax backgrounds */
+img {
+    max-width: 100%;
+    height: auto;
 }
