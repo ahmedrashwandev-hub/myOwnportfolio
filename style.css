@@ -705,3 +705,9 @@ img {
     max-width: 100%;
     height: auto;
 }
+
+
+
+.fab.fa-github {
+  font-size: 2rem; /* أو أي حجم يعجبك */
+}
